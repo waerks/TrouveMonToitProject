@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- *** META *** -->
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="TrouveMonToit est la plateforme idéale pour rechercher, comparer et trouver votre futur logement. Découvrez une expérience simple et intuitive pour trouver la maison ou l'appartement de vos rêves.">
+        <meta name="keywords" content="immobilier, location, achat, appartement, maison, logement, TrouveMonToit, annonces immobilières">
+        <meta name="author" content="TrouveMonToit">
+        <meta name="robots" content="index, follow">
+        <meta name="theme-color" content="#2C3E50">
+        <!-- *** OPEN GRAPH *** -->
+        <meta property="og:title" content="TrouveMonToit - Trouvez votre logement idéal">
+        <meta property="og:description" content="Explorez les meilleures annonces immobilières. TrouveMonToit vous aide à trouver rapidement la maison ou l'appartement parfait.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://www.touvemon-toit.com"> <!-- Remplace par l'URL réelle -->
+        <meta property="og:image" content="https://www.touvemon-toit.com/assets/images/preview.jpg"> <!-- URL de l'image d'aperçu -->
+        <meta property="og:site_name" content="TrouveMonToit">
+        <!-- *** ICONS *** -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="{{ asset('build/images/logos/180x180.png') }}">
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="{{ asset('build/images/logos/32x32.png') }}">
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="{{ asset('build/images/logos/16x16.png') }}">
+        <!-- *** TITLE *** -->
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <!-- *** LINKS *** -->
         {% block stylesheets %}
+            {{ encore_entry_link_tags('styles') }}
         {% endblock %}
-
+        <!-- *** SCRIPTS *** -->
         {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
