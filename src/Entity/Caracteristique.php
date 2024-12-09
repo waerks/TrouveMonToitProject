@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CaracteristiqueRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -34,6 +36,20 @@ class Caracteristique
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2, nullable: true)]
     private ?string $surface_terrain = null;
+
+    #[ORM\OneToOne(mappedBy: 'caracteristiques', cascade: ['persist', 'remove'])]
+    private ?Annonce $annonce = null;
+
+    /**
+     * @var Collection<int, Chambre>
+     */
+    #[ORM\OneToMany(targetEntity: Chambre::class, mappedBy: 'caracteristique', orphanRemoval: true)]
+    private Collection $chambre;
+
+    public function __construct()
+    {
+        $this->chambre = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -120,6 +136,53 @@ class Caracteristique
     public function setSurfaceTerrain(?string $surface_terrain): static
     {
         $this->surface_terrain = $surface_terrain;
+
+        return $this;
+    }
+
+    public function getAnnonce(): ?Annonce
+    {
+        return $this->annonce;
+    }
+
+    public function setAnnonce(Annonce $annonce): static
+    {
+        // set the owning side of the relation if necessary
+        if ($annonce->getCaracteristiques() !== $this) {
+            $annonce->setCaracteristiques($this);
+        }
+
+        $this->annonce = $annonce;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Chambre>
+     */
+    public function getChambre(): Collection
+    {
+        return $this->chambre;
+    }
+
+    public function addChambre(Chambre $chambre): static
+    {
+        if (!$this->chambre->contains($chambre)) {
+            $this->chambre->add($chambre);
+            $chambre->setCaracteristique($this);
+        }
+
+        return $this;
+    }
+
+    public function removeChambre(Chambre $chambre): static
+    {
+        if ($this->chambre->removeElement($chambre)) {
+            // set the owning side to null (unless already changed)
+            if ($chambre->getCaracteristique() === $this) {
+                $chambre->setCaracteristique(null);
+            }
+        }
 
         return $this;
     }

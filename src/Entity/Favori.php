@@ -17,6 +17,14 @@ class Favori
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date_ajout = null;
 
+    #[ORM\ManyToOne(inversedBy: 'favoris')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Annonce $annonce = null;
+
+    #[ORM\ManyToOne(inversedBy: 'favoris')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -30,6 +38,30 @@ class Favori
     public function setDateAjout(\DateTimeInterface $date_ajout): static
     {
         $this->date_ajout = $date_ajout;
+
+        return $this;
+    }
+
+    public function getAnnonce(): ?Annonce
+    {
+        return $this->annonce;
+    }
+
+    public function setAnnonce(?Annonce $annonce): static
+    {
+        $this->annonce = $annonce;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }

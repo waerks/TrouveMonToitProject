@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20241209103827 extends AbstractMigration
+final class Version20241209111602 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,7 +20,7 @@ final class Version20241209103827 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE TABLE annonce (id INT AUTO_INCREMENT NOT NULL, titre VARCHAR(255) NOT NULL, description LONGTEXT DEFAULT NULL, prix NUMERIC(12, 2) NOT NULL, charges NUMERIC(10, 2) DEFAULT NULL, date_publication DATETIME NOT NULL, etat VARCHAR(255) DEFAULT NULL, nombre_etages INT NOT NULL, nombre_facades INT NOT NULL, parking INT DEFAULT NULL, statut VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE annonce (id INT AUTO_INCREMENT NOT NULL, description LONGTEXT DEFAULT NULL, prix NUMERIC(12, 2) NOT NULL, charges NUMERIC(10, 2) DEFAULT NULL, date_publication DATETIME NOT NULL, etat VARCHAR(255) DEFAULT NULL, nombre_etages INT NOT NULL, nombre_facades INT NOT NULL, parking INT DEFAULT NULL, statut VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE caracteristique (id INT AUTO_INCREMENT NOT NULL, annee_construction INT NOT NULL, surface_habitable NUMERIC(10, 2) NOT NULL, nombre_salles_de_bain INT NOT NULL, nombre_toilettes INT NOT NULL, surface_cuisine NUMERIC(7, 2) NOT NULL, surface_salon NUMERIC(7, 2) NOT NULL, surface_terrain NUMERIC(10, 2) DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE categorie (id INT AUTO_INCREMENT NOT NULL, type_bien VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE chambre (id INT AUTO_INCREMENT NOT NULL, surface NUMERIC(7, 2) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');

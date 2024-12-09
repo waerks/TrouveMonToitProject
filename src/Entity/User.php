@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -43,6 +45,38 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
+
+    /**
+     * @var Collection<int, Annonce>
+     */
+    #[ORM\OneToMany(targetEntity: Annonce::class, mappedBy: 'createur', orphanRemoval: true)]
+    private Collection $annonces;
+
+    /**
+     * @var Collection<int, Favori>
+     */
+    #[ORM\OneToMany(targetEntity: Favori::class, mappedBy: 'user', orphanRemoval: true)]
+    private Collection $favoris;
+
+    /**
+     * @var Collection<int, Message>
+     */
+    #[ORM\OneToMany(targetEntity: Message::class, mappedBy: 'expediteur', orphanRemoval: true)]
+    private Collection $messagesEnvoyes;
+
+    /**
+     * @var Collection<int, Message>
+     */
+    #[ORM\OneToMany(targetEntity: Message::class, mappedBy: 'destinataire', orphanRemoval: true)]
+    private Collection $messagesRecus;
+
+    public function __construct()
+    {
+        $this->annonces = new ArrayCollection();
+        $this->favoris = new ArrayCollection();
+        $this->messagesEnvoyes = new ArrayCollection();
+        $this->messagesRecus = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -163,6 +197,126 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setSlug(string $slug): static
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Annonce>
+     */
+    public function getAnnonces(): Collection
+    {
+        return $this->annonces;
+    }
+
+    public function addAnnonce(Annonce $annonce): static
+    {
+        if (!$this->annonces->contains($annonce)) {
+            $this->annonces->add($annonce);
+            $annonce->setCreateur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnnonce(Annonce $annonce): static
+    {
+        if ($this->annonces->removeElement($annonce)) {
+            // set the owning side to null (unless already changed)
+            if ($annonce->getCreateur() === $this) {
+                $annonce->setCreateur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Favori>
+     */
+    public function getFavoris(): Collection
+    {
+        return $this->favoris;
+    }
+
+    public function addFavori(Favori $favori): static
+    {
+        if (!$this->favoris->contains($favori)) {
+            $this->favoris->add($favori);
+            $favori->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFavori(Favori $favori): static
+    {
+        if ($this->favoris->removeElement($favori)) {
+            // set the owning side to null (unless already changed)
+            if ($favori->getUser() === $this) {
+                $favori->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Message>
+     */
+    public function getMessagesEnvoyes(): Collection
+    {
+        return $this->messagesEnvoyes;
+    }
+
+    public function addMessagesEnvoye(Message $messagesEnvoye): static
+    {
+        if (!$this->messagesEnvoyes->contains($messagesEnvoye)) {
+            $this->messagesEnvoyes->add($messagesEnvoye);
+            $messagesEnvoye->setExpediteur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMessagesEnvoye(Message $messagesEnvoye): static
+    {
+        if ($this->messagesEnvoyes->removeElement($messagesEnvoye)) {
+            // set the owning side to null (unless already changed)
+            if ($messagesEnvoye->getExpediteur() === $this) {
+                $messagesEnvoye->setExpediteur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Message>
+     */
+    public function getMessagesRecus(): Collection
+    {
+        return $this->messagesRecus;
+    }
+
+    public function addMessagesRecu(Message $messagesRecu): static
+    {
+        if (!$this->messagesRecus->contains($messagesRecu)) {
+            $this->messagesRecus->add($messagesRecu);
+            $messagesRecu->setDestinataire($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMessagesRecu(Message $messagesRecu): static
+    {
+        if ($this->messagesRecus->removeElement($messagesRecu)) {
+            // set the owning side to null (unless already changed)
+            if ($messagesRecu->getDestinataire() === $this) {
+                $messagesRecu->setDestinataire(null);
+            }
+        }
 
         return $this;
     }

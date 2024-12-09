@@ -29,6 +29,10 @@ class Contact
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date_envoi = null;
 
+    #[ORM\ManyToOne(inversedBy: 'contacts')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Annonce $annonce = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +94,18 @@ class Contact
     public function setDateEnvoi(\DateTimeInterface $date_envoi): static
     {
         $this->date_envoi = $date_envoi;
+
+        return $this;
+    }
+
+    public function getAnnonce(): ?Annonce
+    {
+        return $this->annonce;
+    }
+
+    public function setAnnonce(?Annonce $annonce): static
+    {
+        $this->annonce = $annonce;
 
         return $this;
     }

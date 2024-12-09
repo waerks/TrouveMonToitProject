@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\LocalisationRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: LocalisationRepository::class)]
@@ -30,6 +32,20 @@ class Localisation
 
     #[ORM\Column(length: 255)]
     private ?string $zone = null;
+
+    #[ORM\OneToOne(mappedBy: 'localisation', cascade: ['persist', 'remove'])]
+    private ?Annonce $annonce = null;
+
+    /**
+     * @var Collection<int, Proximite>
+     */
+    #[ORM\ManyToMany(targetEntity: Proximite::class, inversedBy: 'localisations')]
+    private Collection $proximite;
+
+    public function __construct()
+    {
+        $this->proximite = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -104,6 +120,47 @@ class Localisation
     public function setZone(string $zone): static
     {
         $this->zone = $zone;
+
+        return $this;
+    }
+
+    public function getAnnonce(): ?Annonce
+    {
+        return $this->annonce;
+    }
+
+    public function setAnnonce(Annonce $annonce): static
+    {
+        // set the owning side of the relation if necessary
+        if ($annonce->getLocalisation() !== $this) {
+            $annonce->setLocalisation($this);
+        }
+
+        $this->annonce = $annonce;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Proximite>
+     */
+    public function getProximite(): Collection
+    {
+        return $this->proximite;
+    }
+
+    public function addProximite(Proximite $proximite): static
+    {
+        if (!$this->proximite->contains($proximite)) {
+            $this->proximite->add($proximite);
+        }
+
+        return $this;
+    }
+
+    public function removeProximite(Proximite $proximite): static
+    {
+        $this->proximite->removeElement($proximite);
 
         return $this;
     }
