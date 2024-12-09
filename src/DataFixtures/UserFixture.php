@@ -34,11 +34,27 @@ class UserFixture extends Fixture
             $user->setPassword($this->passwordHasher->hashPassword($user,'mdp123'));
             $user->setNom($faker->lastName());
             $user->setPrenom($faker->firstName());
-            $user->setTelephone($faker->e164PhoneNumber());
+            $user->setTelephone($faker->phoneNumber());
+            $user->setPhoto($faker->imageUrl());
             $user->generateSlug($this->slugger);
 
             $manager->persist($user);
         }
+
+        // Créer l'admin
+        $userAdmin = new User();
+
+        $userAdmin->setEmail('admin@mail.com');
+        $userAdmin->setRoles(['ROLE_ADMIN']);
+        $userAdmin->setPassword($this->passwordHasher->hashPassword($userAdmin,'admin123'));
+        $userAdmin->setNom($faker->lastName());
+        $userAdmin->setPrenom($faker->firstName());
+        $userAdmin->setTelephone($faker->phoneNumber());
+        $userAdmin->setPhoto($faker->imageUrl());
+        $userAdmin->generateSlug($this->slugger);
+
+        $manager->persist($userAdmin);
+
         
         $manager->flush();
     }

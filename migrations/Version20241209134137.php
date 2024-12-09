@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20241209115053 extends AbstractMigration
+final class Version20241209134137 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,10 +20,10 @@ final class Version20241209115053 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE TABLE annonce (id INT AUTO_INCREMENT NOT NULL, createur_id INT NOT NULL, localisation_id INT NOT NULL, energie_id INT NOT NULL, caracteristiques_id INT NOT NULL, statistiques_id INT NOT NULL, categorie_id INT NOT NULL, description LONGTEXT DEFAULT NULL, prix NUMERIC(12, 2) NOT NULL, charges NUMERIC(10, 2) DEFAULT NULL, date_publication DATETIME NOT NULL, etat VARCHAR(255) DEFAULT NULL, nombre_etages INT NOT NULL, nombre_facades INT NOT NULL, parking INT DEFAULT NULL, statut VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, INDEX IDX_F65593E573A201E5 (createur_id), UNIQUE INDEX UNIQ_F65593E5C68BE09C (localisation_id), UNIQUE INDEX UNIQ_F65593E5B732A364 (energie_id), UNIQUE INDEX UNIQ_F65593E5B2639FE4 (caracteristiques_id), INDEX IDX_F65593E533BC25D3 (statistiques_id), INDEX IDX_F65593E5BCF5E72D (categorie_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE annonce (id INT AUTO_INCREMENT NOT NULL, createur_id INT NOT NULL, localisation_id INT NOT NULL, energie_id INT NOT NULL, caracteristiques_id INT NOT NULL, statistiques_id INT NOT NULL, categorie_id INT NOT NULL, type_annonce_id INT NOT NULL, description LONGTEXT DEFAULT NULL, prix NUMERIC(12, 2) NOT NULL, charges NUMERIC(10, 2) DEFAULT NULL, date_publication DATETIME NOT NULL, etat VARCHAR(255) DEFAULT NULL, nombre_etages INT NOT NULL, nombre_facades INT NOT NULL, parking INT DEFAULT NULL, statut VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, INDEX IDX_F65593E573A201E5 (createur_id), UNIQUE INDEX UNIQ_F65593E5C68BE09C (localisation_id), UNIQUE INDEX UNIQ_F65593E5B732A364 (energie_id), UNIQUE INDEX UNIQ_F65593E5B2639FE4 (caracteristiques_id), INDEX IDX_F65593E533BC25D3 (statistiques_id), INDEX IDX_F65593E5BCF5E72D (categorie_id), INDEX IDX_F65593E595067D0A (type_annonce_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE annonce_equipement (annonce_id INT NOT NULL, equipement_id INT NOT NULL, INDEX IDX_A6C013708805AB2F (annonce_id), INDEX IDX_A6C01370806F0F5C (equipement_id), PRIMARY KEY(annonce_id, equipement_id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE caracteristique (id INT AUTO_INCREMENT NOT NULL, annee_construction INT NOT NULL, surface_habitable NUMERIC(10, 2) NOT NULL, nombre_salles_de_bain INT NOT NULL, nombre_toilettes INT NOT NULL, surface_cuisine NUMERIC(7, 2) NOT NULL, surface_salon NUMERIC(7, 2) NOT NULL, surface_terrain NUMERIC(10, 2) DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE categorie (id INT AUTO_INCREMENT NOT NULL, type_bien VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE categorie (id INT AUTO_INCREMENT NOT NULL, type_achat VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE chambre (id INT AUTO_INCREMENT NOT NULL, caracteristique_id INT NOT NULL, surface NUMERIC(7, 2) NOT NULL, INDEX IDX_C509E4FF1704EEB7 (caracteristique_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE chauffage (id INT AUTO_INCREMENT NOT NULL, type_chauffage VARCHAR(150) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE contact (id INT AUTO_INCREMENT NOT NULL, annonce_id INT NOT NULL, email VARCHAR(255) NOT NULL, nom VARCHAR(50) NOT NULL, prenom VARCHAR(50) NOT NULL, message LONGTEXT NOT NULL, date_envoi DATETIME NOT NULL, INDEX IDX_4C62E6388805AB2F (annonce_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
@@ -36,7 +36,8 @@ final class Version20241209115053 extends AbstractMigration
         $this->addSql('CREATE TABLE photo (id INT AUTO_INCREMENT NOT NULL, annonce_id INT NOT NULL, url VARCHAR(255) NOT NULL, INDEX IDX_14B784188805AB2F (annonce_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE proximite (id INT AUTO_INCREMENT NOT NULL, type_proximite VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE statistique (id INT AUTO_INCREMENT NOT NULL, nombre_visites BIGINT NOT NULL, date DATETIME NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE `user` (id INT AUTO_INCREMENT NOT NULL, email VARCHAR(180) NOT NULL, roles JSON NOT NULL COMMENT \'(DC2Type:json)\', password VARCHAR(255) NOT NULL, nom VARCHAR(50) NOT NULL, prenom VARCHAR(50) NOT NULL, telephone VARCHAR(15) DEFAULT NULL, slug VARCHAR(255) NOT NULL, UNIQUE INDEX UNIQ_IDENTIFIER_EMAIL (email), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE type_annonce (id INT AUTO_INCREMENT NOT NULL, type_annonce VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE `user` (id INT AUTO_INCREMENT NOT NULL, email VARCHAR(180) NOT NULL, roles JSON NOT NULL COMMENT \'(DC2Type:json)\', password VARCHAR(255) NOT NULL, nom VARCHAR(50) NOT NULL, prenom VARCHAR(50) NOT NULL, telephone VARCHAR(15) DEFAULT NULL, photo VARCHAR(255) DEFAULT NULL, slug VARCHAR(255) NOT NULL, UNIQUE INDEX UNIQ_IDENTIFIER_EMAIL (email), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE messenger_messages (id BIGINT AUTO_INCREMENT NOT NULL, body LONGTEXT NOT NULL, headers LONGTEXT NOT NULL, queue_name VARCHAR(190) NOT NULL, created_at DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', available_at DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', delivered_at DATETIME DEFAULT NULL COMMENT \'(DC2Type:datetime_immutable)\', INDEX IDX_75EA56E0FB7336F0 (queue_name), INDEX IDX_75EA56E0E3BD61CE (available_at), INDEX IDX_75EA56E016BA31DB (delivered_at), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('ALTER TABLE annonce ADD CONSTRAINT FK_F65593E573A201E5 FOREIGN KEY (createur_id) REFERENCES `user` (id)');
         $this->addSql('ALTER TABLE annonce ADD CONSTRAINT FK_F65593E5C68BE09C FOREIGN KEY (localisation_id) REFERENCES localisation (id)');
@@ -44,6 +45,7 @@ final class Version20241209115053 extends AbstractMigration
         $this->addSql('ALTER TABLE annonce ADD CONSTRAINT FK_F65593E5B2639FE4 FOREIGN KEY (caracteristiques_id) REFERENCES caracteristique (id)');
         $this->addSql('ALTER TABLE annonce ADD CONSTRAINT FK_F65593E533BC25D3 FOREIGN KEY (statistiques_id) REFERENCES statistique (id)');
         $this->addSql('ALTER TABLE annonce ADD CONSTRAINT FK_F65593E5BCF5E72D FOREIGN KEY (categorie_id) REFERENCES categorie (id)');
+        $this->addSql('ALTER TABLE annonce ADD CONSTRAINT FK_F65593E595067D0A FOREIGN KEY (type_annonce_id) REFERENCES type_annonce (id)');
         $this->addSql('ALTER TABLE annonce_equipement ADD CONSTRAINT FK_A6C013708805AB2F FOREIGN KEY (annonce_id) REFERENCES annonce (id) ON DELETE CASCADE');
         $this->addSql('ALTER TABLE annonce_equipement ADD CONSTRAINT FK_A6C01370806F0F5C FOREIGN KEY (equipement_id) REFERENCES equipement (id) ON DELETE CASCADE');
         $this->addSql('ALTER TABLE chambre ADD CONSTRAINT FK_C509E4FF1704EEB7 FOREIGN KEY (caracteristique_id) REFERENCES caracteristique (id)');
@@ -68,6 +70,7 @@ final class Version20241209115053 extends AbstractMigration
         $this->addSql('ALTER TABLE annonce DROP FOREIGN KEY FK_F65593E5B2639FE4');
         $this->addSql('ALTER TABLE annonce DROP FOREIGN KEY FK_F65593E533BC25D3');
         $this->addSql('ALTER TABLE annonce DROP FOREIGN KEY FK_F65593E5BCF5E72D');
+        $this->addSql('ALTER TABLE annonce DROP FOREIGN KEY FK_F65593E595067D0A');
         $this->addSql('ALTER TABLE annonce_equipement DROP FOREIGN KEY FK_A6C013708805AB2F');
         $this->addSql('ALTER TABLE annonce_equipement DROP FOREIGN KEY FK_A6C01370806F0F5C');
         $this->addSql('ALTER TABLE chambre DROP FOREIGN KEY FK_C509E4FF1704EEB7');
@@ -97,6 +100,7 @@ final class Version20241209115053 extends AbstractMigration
         $this->addSql('DROP TABLE photo');
         $this->addSql('DROP TABLE proximite');
         $this->addSql('DROP TABLE statistique');
+        $this->addSql('DROP TABLE type_annonce');
         $this->addSql('DROP TABLE `user`');
         $this->addSql('DROP TABLE messenger_messages');
     }

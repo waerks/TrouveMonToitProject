@@ -100,6 +100,10 @@ class Annonce
     #[ORM\JoinColumn(nullable: false)]
     private ?Categorie $categorie = null;
 
+    #[ORM\ManyToOne(inversedBy: 'annonces')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?TypeAnnonce $typeAnnonce = null;
+
     public function __construct()
     {
         $this->photos = new ArrayCollection();
@@ -446,6 +450,18 @@ class Annonce
     public function setCategorie(?Categorie $categorie): static
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getTypeAnnonce(): ?TypeAnnonce
+    {
+        return $this->typeAnnonce;
+    }
+
+    public function setTypeAnnonce(?TypeAnnonce $typeAnnonce): static
+    {
+        $this->typeAnnonce = $typeAnnonce;
 
         return $this;
     }
