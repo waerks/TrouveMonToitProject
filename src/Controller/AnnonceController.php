@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AnnonceController extends AbstractController
 {
@@ -16,6 +17,7 @@ class AnnonceController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_USER')]
     #[Route('/annonce/tableau-de-bord/{userName}', name: 'annonce_gestion')]
     public function AnnonceGestion(string $userName): Response
     {
@@ -24,6 +26,7 @@ class AnnonceController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_USER')]
     #[Route('/annonce/modifier-annonce', name: 'annonce_modification')]
     public function AnnonceModification(): Response
     {
