@@ -39,9 +39,6 @@ class AnnonceFixture extends Fixture implements DependentFixtureInterface
 
         // Récupérer les utilisateurs
         $users = $this->doctrine->getRepository(User::class)->findAll();
-        if (empty($users)) {
-            throw new \Exception("Aucun utilisateur trouvé. Veuillez exécuter UserFixture d'abord.");
-        }
 
         for ($i = 0; $i < 10; $i++) {
             $annonce = new Annonce();
