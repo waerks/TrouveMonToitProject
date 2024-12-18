@@ -1,0 +1,32 @@
+@media (min-width: 768px) {
+    // ASSETS //
+    .cardBienH {
+        width: 700px;
+    }
+
+    // ESPACE PERSONNEL //
+    #espacepersonnel {
+
+        .container {
+
+            .divProfilContent {
+                display: flex;
+                gap: 45px;
+                
+                .divProfilImg {
+                    height: 200px;
+                    width: 300px;
+                    margin-top: 20px;
+                }
+                
+                .divProfilInfos {
+
+                    .divModif {
+                        justify-content: flex-start;
+                        gap: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

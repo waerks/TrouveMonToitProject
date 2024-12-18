@@ -1,0 +1,1709 @@
+@media (min-width : 0) {
+    // BODY //
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0 auto;
+        background-color: $background-main-color;
+
+        position: relative;
+    }
+
+    // ASSETS //
+    hr {
+        color: $primary-color;
+        margin: 0;
+        margin: 20px 0;
+    }
+
+    .btnAccent,
+    .btnPrimary,
+    .btnSecondary,
+    .btnMenu,
+    .btnChoixNotActive,
+    .btnChoixActive,
+    .btnPlus {
+        height: 35px;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+
+    .btnAccent {
+        background-color: $accent-color;
+    }
+
+    .btnPrimary {
+        background-color: $primary-color;
+    }
+
+    .btnSecondary {
+        background-color: $secondary-color;
+        color: $primary-color;
+    }
+
+    .btnMenu {
+        background-color: $primary-color;
+        border: 1px solid $secondary-color;
+    }
+
+    .btnChoixNotActive, .btnPlus {
+        border: 1px solid $primary-color;
+        color: $primary-color;
+    }
+
+    .btnChoixActive {
+        border: 1px solid $primary-color;
+        background-color: $primary-color;
+        color: $secondary-color;
+    }
+
+    .btnMini {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $primary-color;
+        border-radius: 10px;
+
+        img {
+            object-fit: contain;
+            width: 90%;
+            height: 90%;
+            border-radius: 10px;
+        }
+    }
+
+    .likeActive {
+        background-color: $accent-color;
+        height: 35px;
+        width: 35px;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+
+    .menuPerso {
+        background-color: $primary-color;
+        height: 35px;
+        width: 35px;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+
+        img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+        }
+    }
+
+    .discussion {
+        width: 100%;
+        height: 55vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        gap: 60px;
+
+        overflow-y: scroll;
+
+        .messageContainer {
+            width: 95%;
+            display: flex;
+            gap: 5px;
+
+            position: relative;
+
+            .messageSMS {
+                background-color: $secondary-color;
+                width: 75%;
+                padding: 5px 15px;
+
+                p {
+                    font-size: 14px;
+                }
+
+                &:first-child {
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+
+                &:last-child {
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+            }
+        }
+
+        .destinataire {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+
+            .messageSMS {
+
+                &:first-child {
+                    position: relative;
+
+                    &::before {
+                        content: "11:16";
+                        position: absolute;
+                        top: -20px;
+                        left: 15px;
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 12px;
+                    }
+                }
+
+                &:last-child {
+                    position: relative;
+
+                    &::after {
+                        content: "✓✓";
+                        position: absolute;
+                        bottom: -20px;
+                        right: 15px;
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        .expediteur {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            .messageSMS {
+
+                &:first-child {
+                    position: relative;
+
+                    &::before {
+                        content: "11:16";
+                        position: absolute;
+                        top: -20px;
+                        right: 15px;
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    .send {
+        height: 35px;
+        width: 35px;
+        background-color: $accent-color;
+        border-radius: 10px;
+        border: none;
+    }
+
+    .cardBien {
+        min-width: 300px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+
+        -webkit-box-shadow: 6px 6px 6px 0px rgba(44,62,80,0.4);
+        -moz-box-shadow: 6px 6px 6px 0px rgba(44,62,80,0.4);
+        box-shadow: 6px 6px 6px 0px rgba(44,62,80,0.4);
+
+        .likeBienActive,
+        .likeBienNotActive {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: $primary-color;
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .likeBienActive {
+            background-color: $accent-color;
+        }
+
+        .divImg {
+
+            img {
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .divContent {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 20px;
+
+            .typeBien {
+                font-size: 16px;
+                margin: 0;
+            }
+
+            .prixBien {
+                color: $primary-color;
+                line-height: 0.8;
+
+                span {
+                    color: $primary-color;
+                }
+            }
+
+            .infosBien {
+                font-size: 16px;
+                margin: 0;
+            }
+
+            .adresseBien {
+                font-size: 16px;
+                margin: 0;
+            }
+        }
+    }
+
+    .cardBienV {
+        height: 440px;
+        width: 300px;
+        flex-direction: column;
+
+        .divImg {
+            width: 100%;
+            height: 60%;
+        }
+
+        .divContent {
+            width: 100%;
+            height: 40%;
+        }
+    }
+
+    .cardBienH {
+        height: 300px;
+        width: 800px;
+
+        .divImg {
+            width: 60%;
+            height: 100%;
+        }
+
+        .divContent {
+            width: 40%;
+            height: 100%;
+        }
+    }
+
+    .input {
+        height: 35px;
+        min-width: 100px;
+        max-width: 855px;
+        border-radius: 10px;
+        border: 1px solid $primary-color;
+        padding: 0 25px;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    textarea {
+        min-height: 140px;
+        min-width: 300px;
+        max-width: 855px;
+        border-radius: 10px;
+        border: 1px solid $primary-color;
+        padding: 10px 25px;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .select {
+        height: 35px;
+        width: 250px;
+        border-radius: 10px;
+        border: 1px solid $primary-color;
+        padding: 0 15px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+
+        appearance: none;
+        -webkit-appearance: none;
+
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23000'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: calc(100% - 15px) center;
+        background-size: 10px;
+
+        option {
+            font-family: 'Montserrat', sans-serif;
+        }
+    }
+
+    .nbre-input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 270px;
+        height: 35px;
+
+        position: relative;
+
+        input {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 10px;
+            border: 1px solid $primary-color;
+            color: $primary-color;
+            font-family: 'Open Sans', sans-serif;
+
+            &:focus-visible {
+                border: 1px solid $primary-color;
+            }
+
+            &::placeholder {
+                color: $text-secondary-color;
+            }
+        }
+
+        button {
+            width: 35px;
+            height: 35px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 10px;
+            position: absolute;
+        }
+
+        .decrement {
+            top: 0;
+            left: 0;
+            background-color: $secondary-color;
+            color: $primary-color;
+            border: 1px solid $primary-color;
+        }
+
+        .increment {
+            top: 0;
+            right: 0;
+            background-color: $primary-color;
+            color: $secondary-color;
+            border: 1px solid $primary-color;
+        }
+    }
+  
+
+    // MENU //
+    nav {
+        background-color: $primary-color;
+        height: 100px;
+        width: 100%;
+        display: flex;
+
+        position: fixed;
+        z-index: 99999;
+        top: 0;
+        left: 0;
+
+        .divLogoMenu {
+            height: 100%;
+            width: 20%;
+        }
+
+        .divBtnsMenu {
+            height: 100%;
+            width: 80%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    }
+
+    .menu {
+        width: 60px;
+        height: calc(100vh - 100px);
+        background-color: $primary-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        a {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                object-fit: contain;
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+
+    #chart_div {
+        width: 100%;
+        height: 500px;
+    }
+
+    .pagination {
+        margin-top: 45px;
+        display: inline-block;
+
+        a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+        }
+
+        .active {
+            background-color: $accent-color;
+            color: white;
+            border: 1px solid $accent-color;
+        }
+
+        a:hover:not(.active) {
+            background-color: $background-main-color;
+        }
+
+        a:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        a:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+    // FOOTER //
+    footer {
+        height: 200px;
+        width: 100%;
+        background-color: $primary-color;
+        margin-top: 100px;
+    }
+
+    // SECTIONS //
+    #accueil, #rechercheavancee, #resultatrecherche, #detailBien, #espacepersonnel, #connexion, #formbien {
+        margin-top: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .container {
+            width: 92%;
+            max-width: 1280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    // ACCUEIL //
+    #accueil {
+
+        .container {
+
+            .divAccueil {
+                margin-top: 100px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                h1 {
+                    text-align: center;
+                }
+
+                .divMiniFiltre {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    margin-top: 45px;
+
+                    .divRecherche {
+
+                        input {
+                            width: 100%;
+                        }
+                    }
+
+                    .divTypeBien {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+    
+                        a {
+                            width: 45%;
+                        }
+                    }
+    
+                    .div3Filtres {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        gap: 10px;
+                        flex-wrap: wrap;
+                        flex-direction: row-reverse;
+    
+                        a {
+                            width: 100%;
+                        }
+    
+                        select {
+                            width: 100%;
+                        }
+                    }
+                }
+
+            }
+
+            .divPublicationsV, .divPublicationsL {
+                width: 100%;
+                margin-top: 60px;
+                
+                .containerPublications {
+                    overflow-x: scroll;
+                    display: flex;
+                    gap: 45px;
+                    height: 500px;
+                }
+            }
+        }
+    }
+
+    // RECHERCHE AVANCEE //
+    #rechercheavancee {
+
+        .container {
+
+            .divRechercheRapide {
+                width: 100%;
+
+                h2 {
+                    margin-top: 60px;
+                }
+            }
+
+            .divCustomRecherche {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin-top: 60px;
+                
+                hr {
+                    width: 100%;
+                    color: $text-primary-color;
+                    margin: 0;
+                }
+
+                h3 {
+                    margin: 20px 0;
+                }
+
+                h4 {
+                    margin: 0;
+                }
+                
+                .divTypeTransaction {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    a {
+                        width: 45%;
+                    }
+                }
+
+                .divLocalite {
+
+                    input {
+                        width: 100%;
+                    }
+                }
+
+                .divPrix, .divSuperficie, .divAnneeConstruction {
+                    display: flex;
+                    flex-direction: column;
+
+                    label {
+                        margin: 10px 0;
+                    }
+
+                    input {
+                        width: 100%;
+                    }
+                }
+
+                .divSuperficie {
+                    margin-bottom: 20px;
+                }
+
+                .divNbreChambres {
+                    margin-bottom: 20px;
+                    
+                    .nbre-input {
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            .divConfirmationRecherche{
+                width: 100%;
+                display: flex;
+                gap: 45px;
+                margin-top: 60px;
+            }
+        }
+    }
+
+    // RESULTAT RECHERCHE //    
+    #resultatrecherche {
+
+        .container {
+
+            .divEntete {
+                width: 100%;
+
+                h2 {
+                    margin-top: 60px;
+                }
+
+                .divMiniFiltre {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .divFiltre {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 10px 20px;
+                        flex-wrap: wrap;
+                        flex-direction: row-reverse;
+
+                        input {
+                            width: 100%;
+                        }
+                        
+                        select {
+                            width: 100%;
+                        }
+                        
+                        a {
+                            width: 100%;
+                        }
+                    }
+                    
+                    .divTypeBien {
+                        display: flex;
+                        gap: 50px;
+
+                        a {
+                            width: 45%;
+                        }
+                    }
+                }
+
+                .divTriAffichage {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    gap: 10px;
+                    margin-top: 45px;
+
+                    select {
+                        width: 170px;
+                        margin-right: 10px;
+                    }
+                }
+
+                hr {
+                    margin: 60px 0;
+                }
+            }
+
+            .divPublicationstrouvees {
+                width: 100%;
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: center;
+                align-items: center;
+
+                gap: 45px;
+
+                position: relative;
+
+                .divContainerPublications {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    gap: 45px 0;
+                }
+
+                .divCartePoints {
+                    width: 100%;
+                    position: relative;
+                    top: 0;
+                    right: 0;
+
+                    iframe {
+                        width: 100%;
+                        height: 300px;
+                    }
+                }
+            }
+        }
+    }
+
+    // DETAIL BIEN //
+    #detailBien {
+
+        .container {
+
+            .divEntete {
+                width: 100%;
+                display: flex;
+                flex-direction: column-reverse;
+                
+                .divInfos {
+                    width: 100%;
+                    
+                    h2 {
+                        margin-top: 60px;
+                        margin-bottom: 15px;
+                    }
+                    
+                    h4 {
+                        margin: 5px 0;
+                    }
+                    
+                    p {
+                        margin-top: 15px;
+                    }
+                }
+                
+                .divUserCommands {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    
+                    .divOne {
+                        width: 100%;
+                        height: 50%;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        padding-top: 30px;
+                        gap: 20px;
+                    }
+                    
+                    .divTwo {
+                        width: 100%;
+                        height: 50%;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: flex-end;
+                        // padding-bottom: 70px;
+                        padding-top: 45px;
+                    }
+                }
+            }
+
+            .divGalerie {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 60px;
+                gap: 45px;
+
+                .divImages {
+                    width: 100%;
+
+                    display: grid;
+                    gap: 20px; 
+                    justify-content: center;
+                    grid-template-areas: 
+                    "PreviewOne PreviewOne" 
+                    "PreviewTwo PreviewThree";
+
+                    position: relative;
+
+                    .imgPreviewOne {
+                        grid-area: PreviewOne;
+                        height: 400px;
+                        width: 340px;
+                        border-radius: 10px;
+                        object-fit: cover;
+                    }
+                    .imgPreviewTwo {
+                        grid-area: PreviewTwo;
+                        height: 190px;
+                        width: 160px;
+                        border-radius: 10px;
+                        object-fit: cover;
+                    }
+                    .imgPreviewThree {
+                        grid-area: PreviewThree;
+                        height: 190px;
+                        width: 160px;
+                        border-radius: 10px;
+                        object-fit: cover;
+                    }
+
+                    .moreImages {
+                        position: absolute;
+                        background-color: $primary-color;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                        top: 345px;
+                        left: 280px;
+                    }
+                }
+
+                .divCarte {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    iframe {
+                        width: 100%;
+                        height: 400px;
+                    }
+                }
+            }
+
+            .divApercu {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                
+                h3 {
+                    margin-top: 60px;
+                }
+                
+                .divInfos {
+                    width: 100%;
+                    height: 200px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    
+                    .divMiniInfos {
+                        height: 100%;
+                        width: 100%;
+
+                        display: grid;
+                        gap: 20px 60px; 
+                        grid-template-areas: 
+                        "One Three" 
+                        "Two Four";
+
+                        
+                        .divMiniApercu {
+                            height: 35px;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                            
+                            img {
+                                height: 24px;
+                                width: 24px;
+                                object-fit: contain;
+                            }
+
+                            p {
+                                margin: 0;
+                                margin-left: 20px;
+                            }
+                        }
+
+                        .One {
+                            grid-area: One;
+                        }
+
+                        .Two {
+                            grid-area: Two;
+                        }
+
+                        .Three {
+                            grid-area: Three;
+                        }
+
+                        .Four {
+                            grid-area: Four;
+                        }
+                    }
+                    
+                    .divPrixBien {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-end;
+                        width: 100%;
+                        margin-top: 45px;
+
+                        h2 {
+                            margin: 0;
+                            margin-bottom: 20px;
+                        }
+
+                        p {
+                            margin: 0;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+
+                hr {
+                    width: 100%;
+                    margin: 0;
+                    margin-top: 60px;
+                    color: $text-primary-color;
+                }
+            }
+
+            .divCaracteristiques {
+                width: 100%;
+                display: flex;
+                
+                .divContent {
+                    
+                    .divDescription {
+                        
+                        h3 {
+                            margin: 0;
+                            margin-top: 20px;
+                            margin-bottom: 10px;
+                        }
+                        
+                        p {
+                            margin: 0;
+                            margin: 10px 0;
+                        }
+
+                        #date_publication {
+                            font-size: medium;
+
+                            span {
+                                font-weight: 600;
+                                color: $primary-color;
+                            }
+                        }
+                    }
+                    
+                    .divInfosGenerales, .divInterieur, .divExtérieur, .divEnergie, .divLocalisation, .divFinance {
+
+                        h3 {
+                            margin: 0;
+                            margin-top: 20px;
+                            margin-bottom: 10px;
+                        }
+
+                        hr {
+                            width: 100%;
+                            margin: 0;
+                            margin-top: 60px;
+                            color: $text-primary-color;
+                        }
+                        
+                        table {
+                            border-collapse: collapse;
+
+                            tbody {
+                             
+                                tr {
+
+                                    td {
+
+                                        p {
+                                            margin: 0;
+                                        }
+
+                                        &:first-child {
+                                            width: 200px;
+                                        }
+
+                                        &:nth-child(2) {
+                                            padding: 5px 0 5px 20px;
+
+                                            p {
+                                                font-weight: 600;
+                                            }
+                                        }
+                                    }
+
+                                    .chambre {
+                                        padding-left: 50px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .divRememberSlide {
+                    margin-left: 45px;
+                    margin-top: 20px;
+                    display: none;
+
+                    img {
+                        width: 300px;
+                        height: 400px;
+                        object-fit: cover;
+                        border-radius: 10px;
+                    }
+                }
+            }
+
+            .divFormulaire{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                hr {
+                    width: 100%;
+                    margin: 0;
+                    margin-top: 60px;
+                    color: $text-primary-color;
+                }
+
+                h3 {
+                    margin: 0;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+
+                form {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    max-width: 855px;
+                    
+                    .divNP {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 20px;
+
+                        div {
+                            label {
+                                margin-bottom: 10px;
+                            }
+                        }
+                        
+                        .divNom {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+
+                            input {
+                                width: 100%;
+                            }
+                        }
+
+                        .divPrenom {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+
+                            input {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .divEmail, .divTelephone, .divMessage {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        label {
+                            margin-bottom: 10px;
+                        }
+
+                        input {
+                            width: 100%;
+                        }
+                    }
+
+                    a {
+                        margin-top: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    // ESPACE PERSONNEL //
+    #espacepersonnel {
+
+        .container {
+            position: relative;
+
+            .divEntete {
+                width: 100%;
+                margin-top: 130px;
+                display: flex;
+                flex-direction: column-reverse;
+                
+                .divOne {
+                    
+                    h2 {
+                        margin: 0;
+                        margin-bottom: 60px;
+                    }
+                }
+                
+                .divTwo {
+                    padding-bottom: 45px;
+                    display: flex;
+                    justify-content: flex-end;
+                    gap: 20px;
+                }
+            }
+
+            .secondEnete {
+                margin-top: 0;
+            }
+
+            .divGalerie {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 60px;
+                gap: 45px;
+
+                .divImages {
+                    width: 100%;
+
+                    display: grid;
+                    gap: 20px; 
+                    justify-content: center;
+                    grid-template-areas: 
+                    "PreviewOne PreviewOne" 
+                    "PreviewTwo PreviewThree";
+
+                    position: relative;
+
+                    .imgPreviewOne {
+                        grid-area: PreviewOne;
+                        height: 400px;
+                        width: 340px;
+                        border-radius: 10px;
+                        object-fit: cover;
+                    }
+                    .imgPreviewTwo {
+                        grid-area: PreviewTwo;
+                        height: 190px;
+                        width: 160px;
+                        border-radius: 10px;
+                        object-fit: cover;
+                    }
+                    .imgPreviewThree {
+                        grid-area: PreviewThree;
+                        height: 190px;
+                        width: 160px;
+                        border-radius: 10px;
+                        object-fit: cover;
+                    }
+
+                    .moreImages {
+                        position: absolute;
+                        background-color: $primary-color;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                        top: 345px;
+                        left: 280px;
+                    }
+                }
+
+                .divCarte {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    iframe {
+                        width: 100%;
+                        height: 400px;
+                    }
+                }
+            }
+
+            .divVosFavoris, .divVosBiens, .divVosArchives {
+                width: 100%;
+
+                h3 {
+                    margin: 0;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+
+                hr {
+                    margin: 0;
+                    margin: 20px 0;
+                }
+
+                .divContent {
+                    display: flex;
+                    overflow-x: scroll;
+                    height: 500px;
+                }
+            }
+
+            .conversation {
+                margin-top: 100px;
+                
+                .divInfosUser, .divInfosBien {
+                    border: 1px solid $primary-color;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding-left: 20px;
+
+                    h4 {
+                        margin-left: 20px;
+                    }
+                    
+                    img {
+                        height: 60px;
+                        width: 60px;
+                        object-fit: cover;
+                    }
+
+                    p {
+                        font-size: small;
+                    }
+                }
+
+                .divInfosBien {
+                    border-radius: 0;
+                    border-bottom: none;
+                    border-top: none;
+                }
+
+                .discussion {
+                    border: 1px solid $primary-color;
+                    padding: 30px 0;
+                }
+
+                .divVotreSMS {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 5px;
+                    background-color: $primary-color;
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+
+                    textarea {
+                        min-width: 280px;
+                        min-height: 35px;
+                    }
+                }
+            }
+
+            .divProfilContent {
+                width: 100%;
+                
+                .divProfilImg {
+                    height: 300px;
+                    width: 100%;
+                    border-radius: 10px;
+                    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 10px;
+                    }
+                }
+                
+                .divProfilInfos {
+                    width: 100%;
+                    
+                    hr {
+                        width: 100%;
+                        margin: 0;
+                        margin-top: 20px;
+                    }
+
+                    h3 {
+                        margin: 0;
+                        margin: 20px 0;
+                    }
+                    
+                    .divUserProfil {
+                        display: flex;
+                        flex-wrap: wrap;
+                        flex-direction: column;
+                        gap: 20px;
+                        width: 100%;
+                        padding-bottom: 45px;
+
+                        input {
+                            width: 100%;
+                        }
+                    }
+
+                    .divModif {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                }
+            }
+
+            .divMenuPerso {
+                width: 100%;
+                height: 70px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                background-color: $secondary-color;
+                border-radius: 10px;
+
+                position: fixed;
+                top: 100px;
+                left: 0;
+            }
+        }
+    }
+
+    #connexion {
+
+        .divConnexion {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            hr {
+                width: 100%;
+            }
+            
+            .divSeCo {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 45px;
+                margin-bottom: 40px;
+
+                form {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    max-width: 855px;
+                    
+                    .divNP {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 20px;
+
+                        div {
+                            label {
+                                margin-bottom: 10px;
+                            }
+                        }
+                        
+                        .divNom {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+
+                            input {
+                                width: 100%;
+                            }
+                        }
+
+                        .divPrenom {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+
+                            input {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .divEmail, .divTelephone, .divMessage, .divMdp {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        label {
+                            margin-bottom: 10px;
+                        }
+
+                        input {
+                            width: 100%;
+                        }
+                    }
+
+                    .divMdp {
+
+                        label {
+                            margin-top: 20px;
+                        }
+                    }
+
+                    a {
+                        margin-top: 25px;
+                    }
+                }
+            }
+
+            .divPasCompte {
+                width: 100%;
+
+                h3 {
+                    margin: 0;
+                }
+
+                h4 {
+                    margin: 0;
+                    margin: 20px 0;
+                }
+
+                a {
+                    margin-top: 45px;
+                }
+            }
+        }
+    }
+
+    #formbien {
+
+        .container {
+
+            .divInfosRapides {
+                width: 100%;
+
+                h2 {
+                    margin-top: 60px;
+                }
+            }
+
+            .divCustomRecherche {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin-top: 60px;
+                
+                hr {
+                    width: 100%;
+                    color: $text-primary-color;
+                    margin: 0;
+                }
+
+                h3 {
+                    margin: 20px 0;
+                }
+
+                h4 {
+                    margin: 0;
+                }
+
+                select {
+                    width: 270px;
+                }
+
+                textarea {
+                    width: 100%;
+                    max-width: 550px;
+                }
+                
+                .divTypeTransaction {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    a {
+                        width: 45%;
+                    }
+                }
+
+                .divLocalite {
+                    width: 100%;
+
+                    .divRue, .divNumero, .divVille, .divCodePostal {
+                        display: flex;
+                        flex-direction: column;
+    
+                        label {
+                            margin: 10px 0;
+                        }
+    
+                        input {
+                            width: 300px;
+                        }
+                    }
+
+                    .divZoneProximite {
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        label {
+                            margin: 10px 0;
+                            width: 100%;
+                        }
+
+                        .divZoneBox {
+                            padding-bottom: 10px;
+                            width: 50%;
+                        }
+                    }
+                }
+
+                .divPrix, .divSuperficie, .divAnneeConstruction, .divEtat, .divNbreEtagesEtFacades, .divParking, .divSurfHab, .divSDB, .divSalon, .divConso, .divChauffage {
+                    display: flex;
+                    flex-direction: column;
+
+                    label {
+                        margin: 10px 0;
+                    }
+
+                    input {
+                        width: 100%;
+                    }
+                }
+
+                .divSuperficie {
+                    margin-bottom: 20px;
+                }
+
+                .divNbreChambres {
+                    margin-top: 10px;
+
+                    label {
+                        margin: 10px 0;
+                    }
+                    
+                    .nbre-input {
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
+
+                    .divnbreChambre{
+                        padding-left: 35px;
+
+                        div {
+
+                            label {
+                                margin: 10px 0;
+                            }
+
+                            .nbre-input {
+                                margin-top: 10px;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+
+                .divBuandrie, .divMeuble, .divTerrasse, .divGarage, .divEgout, .divDouble, .divPompe, .divPanneaux {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    label {
+                        width: 100%;
+                        margin: 10px 0 5px 0;
+                    }
+                    
+                    .divYNBtn {
+                        width: 50%;
+                        display: flex;
+                        padding-bottom: 5px;
+
+                        label {
+                            padding-left: 10px;
+                        }
+                    }
+                }
+            }
+
+            .divPublier {
+                width: 100%;
+                display: flex;
+                gap: 45px;
+                margin-top: 60px;
+
+                a {
+                    width: 250px;
+                }
+            }
+        }
+    }
+}

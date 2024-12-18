@@ -10,9 +10,12 @@ Encore
         from: './assets/images',
         to: 'images/[path][name].[ext]'
     })
-    .enableSassLoader()
+    .enableSassLoader((options) => {
+        options.sassOptions = {
+            quietDeps: true, // Supprime les avertissements liés à @import
+        };
+    })    
     .enableSingleRuntimeChunk()
-    .enablePostCssLoader() // Optionnel : Ajouter autoprefixer
     .enableSourceMaps(!Encore.isProduction())
     .cleanupOutputBeforeBuild()
     .enableVersioning(Encore.isProduction());

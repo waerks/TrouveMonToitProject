@@ -1,0 +1,316 @@
+@media (min-width: 640px) {
+    // ACCUEIL //
+    #accueil {
+
+        .container {
+
+            .divAccueil {
+
+                .divMiniFiltre {
+                    width: 550px;
+
+                    .divTypeBien {
+    
+                        a {
+                            width: 250px;
+                        }
+                    }
+
+                    .div3Filtres {
+                        flex-direction: row;
+    
+                        a {
+                            width: 170px;
+                        }
+    
+                        select {
+                            width: 170px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // RECHERCHE AVANCEE //
+    #rechercheavancee {
+
+        .container {
+
+            .divCustomRecherche {
+
+                .divTypeTransaction {
+                    justify-content: flex-start;
+                    gap: 45px;
+
+                    a {
+                        width: 250px;
+                    }
+                }
+
+                .divLocalite, .divPrix, .divSuperficie, .divAnneeConstruction, .divSuperficie, .divNbreChambres{
+                    width: 100%;
+
+                    label {
+                        margin: 10px 0;
+                    }
+
+                    input {
+                        width: 100%;
+                        max-width: 550px;
+                    }
+                }
+            }
+        }
+    }
+
+    // RESULTAT RECHERCHE //    
+    #resultatrecherche {
+
+        .container {
+
+            .divEntete {
+
+                .divMiniFiltre {
+                    justify-content: center;
+                    align-items: center;
+
+                    .divFiltre {
+                        width: 550px;
+                        flex-direction: row;
+
+                        input {
+                            width: 550px;
+                        }
+                        
+                        select {
+                            width: 170px;
+                        }
+                        
+                        a {
+                            width: 170px;
+                        }
+                    }
+                    
+                    .divTypeBien {
+                        justify-content: center;
+
+                        a {
+                            width: 250px;
+                        }
+                    }
+                }
+            }
+
+            .divPublicationstrouvees {
+                
+                .divContainerPublications {
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+
+    // DETAIL BIEN //
+    #detailBien {
+
+        .container {
+
+            .divEntete {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                
+                .divInfos {
+                    width: 100%;
+                }
+                
+                .divUserCommands {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    
+                    .divOne {
+                        height: 100%;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        padding-top: 60px;
+                    }
+                    
+                    .divTwo {
+                        height: 100%;
+                    }
+                }
+            }
+
+            .divGalerie {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 60px;
+                gap: 45px;
+
+                .divImages {
+
+                    grid-template-areas: 
+                    "PreviewOne PreviewOne" 
+                    "PreviewTwo PreviewThree";
+
+                    .imgPreviewOne {
+                        width: 600px;
+                    }
+                    .imgPreviewTwo {
+                        width: 100%;
+                    }
+                    .imgPreviewThree {
+                        width: 100%;
+                    }
+
+                    .moreImages {
+                        top: 345px;
+                        left: 540px;
+                    }
+                }
+
+                .divCarte {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    iframe {
+                        width: 100%;
+                        height: 400px;
+                    }
+                }
+            }
+
+            .divApercu {
+
+                .divInfos {
+                    height: 100px;
+                    flex-direction: row;
+
+                    .divPrixBien {
+                        height: 100%;
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    #espacepersonnel {
+
+        .container {
+
+            .divGalerie {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 60px;
+                gap: 45px;
+
+                .divImages {
+
+                    grid-template-areas: 
+                    "PreviewOne PreviewOne" 
+                    "PreviewTwo PreviewThree";
+
+                    .imgPreviewOne {
+                        width: 600px;
+                    }
+                    .imgPreviewTwo {
+                        width: 100%;
+                    }
+                    .imgPreviewThree {
+                        width: 100%;
+                    }
+
+                    .moreImages {
+                        top: 345px;
+                        left: 540px;
+                    }
+                }
+
+                .divCarte {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    iframe {
+                        width: 100%;
+                        height: 400px;
+                    }
+                }
+            }
+
+            .conversation {
+
+                .divVotreSMS {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    background-color: $primary-color;
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+
+                    textarea {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+
+    // RECHERCHE AVANCEE //
+    #formbien {
+
+        .container {
+
+            .divCustomRecherche {
+
+                .divTypeTransaction {
+                    justify-content: flex-start;
+                    gap: 45px;
+
+                    a {
+                        width: 250px;
+                    }
+                }
+
+                .divLocalite {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    max-width: 550px;
+
+                    .divRue, .divVille {
+
+                        input {
+                            width: 430px !important;
+                        }
+                    }
+
+                    .divNumero, .divCodePostal {
+
+                        input {
+                            width: 100px !important;
+                        }
+                    }
+                }
+
+                .divPrix, .divSuperficie, .divAnneeConstruction, .divEtat, .divNbreEtagesEtFacades, .divParking, .divSurfHab, .divSDB, .divSalon, .divConso, .divChauffage, .divBuandrie, .divMeuble, .divTerrasse, .divGarage, .divEgout, .divDouble, .divPompe, .divPanneaux {
+                    width: 550px;
+
+                    .divYNBtn {
+                        width: 20%;
+                    }
+                }
+            }
+        }
+    }
+}

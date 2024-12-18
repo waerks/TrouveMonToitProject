@@ -1,0 +1,1 @@
+console.log("Hello, le js est chargé.");

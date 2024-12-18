@@ -1,3 +1,172 @@
+// FONTS //
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// Typographie Desktop
+$font-h1-size-desktop: 48px;
+$font-h1-line-height-desktop: 1.4;
+
+$font-h2-size-desktop: 36px;
+$font-h2-line-height-desktop: 1.3;
+
+$font-h3-size-desktop: 32px;
+$font-h3-line-height-desktop: 1.4;
+
+$font-h4-size-desktop: 24px;
+$font-h4-line-height-desktop: 1.4;
+
+$font-body-size-desktop: 18px;
+$font-body-line-height-desktop: 1.6;
+
+$font-button-size-desktop: 16px;
+$font-button-line-height-desktop: 1.0;
+
+$font-quote-size-desktop: 20px;
+$font-quote-line-height-desktop: 1.5;
+
+// Typographie Mobile
+$font-h1-size-mobile: 36px;
+$font-h1-line-height-mobile: 1.4;
+
+$font-h2-size-mobile: 32px;
+$font-h2-line-height-mobile: 1.3;
+
+$font-h3-size-mobile: 24px;
+$font-h3-line-height-mobile: 1.4;
+
+$font-h4-size-mobile: 20px;
+$font-h4-line-height-mobile: 1.4;
+
+$font-body-size-mobile: 16px;
+$font-body-line-height-mobile: 1.5;
+
+$font-button-size-mobile: 16px;
+$font-button-line-height-mobile: 1.0;
+
+$font-quote-size-mobile: 18px;
+$font-quote-line-height-mobile: 1.4;
+
+// Breakpoint pour la version mobile
+$breakpoint-mobile: 768px;
+
+// Styles généraux
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; // Semi-Bold
+  font-size: $font-h1-size-desktop;
+  line-height: $font-h1-line-height-desktop;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-h1-size-mobile;
+    line-height: $font-h1-line-height-mobile;
+  }
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; // Semi-Bold
+  font-size: $font-h2-size-desktop;
+  line-height: $font-h2-line-height-desktop;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-h2-size-mobile;
+    line-height: $font-h2-line-height-mobile;
+  }
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500; // Medium
+  font-size: $font-h3-size-desktop;
+  line-height: $font-h3-line-height-desktop;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-h3-size-mobile;
+    line-height: $font-h3-line-height-mobile;
+  }
+}
+
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500; // Medium
+  font-size: $font-h4-size-desktop;
+  line-height: $font-h4-line-height-desktop;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-h4-size-mobile;
+    line-height: $font-h4-line-height-mobile;
+  }
+}
+
+p, label {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400; // Regular
+  font-size: $font-body-size-desktop;
+  line-height: $font-body-line-height-desktop;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-body-size-mobile;
+    line-height: $font-body-line-height-mobile;
+  }
+}
+
+a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500; // Semi-Bold
+  font-size: $font-button-size-desktop;
+  line-height: $font-button-line-height-desktop;
+  text-decoration: none;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-button-size-mobile;
+    line-height: $font-button-line-height-mobile;
+  }
+}
+
+blockquote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: $font-quote-size-desktop;
+  line-height: $font-quote-line-height-desktop;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-quote-size-mobile;
+    line-height: $font-quote-line-height-mobile;
+  }
+}
+
+// COLORS //
+// Palette principale
+$primary-color: #2C3E50; // Bleu marine (Couleur principale)
+$secondary-color: #ECECEC; // Gris clair (Couleur secondaire)
+$accent-color: #E67E22; // Orange chaleureux (Couleur d'accentuation)
+
+// Couleurs de texte
+$text-primary-color: #4A4A4A; // Gris foncé (Texte principal)
+$text-secondary-color: #7D7D7D; // Gris moyen (Sous-titres ou descriptions secondaires)
+
+// Couleurs d'arrière-plan
+$background-main-color: #F9F9F9; // Blanc cassé (Fond principal)
+$background-alt-color: #F2F2F2; // Gris pâle (Sections alternées)
+
+// Exemple d'utilisation des couleurs pour les classes
 body {
-    background-color: red;
+  background-color: $background-main-color;
+  color: $text-primary-color;
+}
+
+h1, h2, h3, h4 {
+  color: $primary-color;
+}
+
+p {
+  color: $text-primary-color;
+}
+
+a {
+  color: #ffffff;
+}
+
+.alt-section {
+  background-color: $background-alt-color;
 }
