@@ -1,0 +1,275 @@
+{# Page de détail d'une Annonce #}
+{% include "base.html.twig" %}
+
+<section id="detailBien">
+    <div class="container">
+        <div class="divEntete">
+            <div class="divInfos">
+                <h2><span>Maison</span> à <span>vendre</span></h2> 
+                <h4><span>3</span> chambres | <span>350</span>m²</h4>
+                <h4>Avenue Dailly 156 | 1030 Schaerbeek</h4>
+                <p>TrouveMonToit code : 6372829202</p>
+            </div>
+            <div class="divUserCommands">
+                <div class="divOne">
+                    <a class="btnPrimary" href="tableaudebord.html">Tableau de bord</a>
+                </div>
+                <div class="divTwo">
+                    <a href="" class="likeActive">🩷</a>
+                </div>
+            </div>
+        </div>
+        <div class="divGalerie">
+            <div class="divImages">
+                <img src="images/maison.png" alt="" class="imgPreviewOne">
+                <img src="images/maison.png" alt="" class="imgPreviewTwo">
+                <img src="images/maison.png" alt="" class="imgPreviewThree">
+
+                <span class="moreImages">🔍</span>
+            </div>
+            <div class="divCarte">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5036.464099080752!2d4.358131277119946!3d50.863903671674095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c37b0b18e0ab%3A0xa7dcedc9c29a0d35!2sInterface3%20asbl!5e0!3m2!1sfr!2sbe!4v1732888493931!5m2!1sfr!2sbe" style="border:0;border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="divApercu">
+            <h3>Aperçu</h3>
+            <div class="divInfos">
+                <div class="divMiniInfos">
+                    <div class="divMiniApercu One">
+                        <img src="images/maison.png" alt="">
+                        <p><span>3</span> chambres</p>
+                    </div>
+                    <div class="divMiniApercu Two">
+                        <img src="images/maison.png" alt="">
+                        <p><span>2</span> salles de bains</p>
+                    </div>
+                    <div class="divMiniApercu Three">
+                        <img src="images/maison.png" alt="">
+                        <p><span>350</span>m²</p>
+                    </div>
+                    <div class="divMiniApercu Four">
+                        <img src="images/maison.png" alt="">
+                        <p><span>760</span>m²</p>
+                    </div>
+                </div>
+                <div class="divPrixBien">
+                    <h2>577 000€</h2>
+                    <p>Disponibilité : <span>17/03/2025</span></p>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="divCaracteristiques">
+            <div class="divContent">
+                <div class="divDescription">
+                    <h3>Description</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, eveniet, odio magni non similique voluptates quibusdam labore dicta at omnis nulla ipsum fuga? Neque numquam nostrum debitis, non consectetur similique. Est voluptas omnis quisquam delectus voluptatem iure nisi consequuntur quod corporis pariatur veniam voluptatum odit temporibus consectetur nam nobis, nihil excepturi possimus, repellat esse atque minus, sit adipisci neque! Iusto!</p>
+                    <p id="date_publication">Publié le : <span>12/12/2024</span></p>
+                </div>
+                <div class="divInfosGenerales">
+                    <hr>
+                    <h3>Informations Générales</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><p>Année de construction</p></td>
+                                <td><p><span>1934</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>État</p></td>
+                                <td><p><span>Rénové</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Nombre d'étages</p></td>
+                                <td><p><span>4</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Nombre de façades</p></td>
+                                <td><p><span>2</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Parkings intérieurs</p></td>
+                                <td><p><span>1</span></p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="divInterieur">
+                    <hr>
+                    <h3>Intérieur</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><p>Surface habitable</p></td>
+                                <td><p><span>350</span>m²</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Chambres et surfaces</p></td>
+                            </tr>
+                            <tr>
+                                <td id="chambre1" class="chambre"><p>Chambre <span>1</span></p></td>
+                                <td><p><span>6</span>m²</p></td>
+                            </tr>
+                            <tr>
+                                <td id="chambre2" class="chambre"><p>Chambre <span>2</span></p></td>
+                                <td><p><span>13</span>m²</p></td>
+                            </tr>
+                            <tr>
+                                <td id="chambre3" class="chambre"><p>Chambre <span>3</span></p></td>
+                                <td><p><span>15</span>m²</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Salles de bains</p></td>
+                                <td><p><span>1</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Toilettes</p></td>
+                                <td><p><span>2</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Cuisine</p></td>
+                                <td><p><span>35</span>m²</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Salon</p></td>
+                                <td><p><span>30</span>m²</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Buanderie</p></td>
+                                <td><p><span>Oui</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Meublé</p></td>
+                                <td><p><span>Non</span></p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="divExtérieur">
+                    <hr>
+                    <h3>Extérieur</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><p>Surface du terrain</p></td>
+                                <td><p><span>760</span>m²</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Terrasse</p></td>
+                                <td><p><span>Oui</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Garage</p></td>
+                                <td><p><span>Oui</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Raccordement à l'égout</p></td>
+                                <td><p><span>Oui</span></p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="divEnergie">
+                    <hr>
+                    <h3>Énergie</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><p>Consommation énergétique (PEB)</p></td>
+                                <td><p><span>773 kWh/m² (Classe F)</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Type de chauffage</p></td>
+                                <td><p><span>Gaz</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Double vitrage</p></td>
+                                <td><p><span>Oui</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Pompes à chaleur</p></td>
+                                <td><p><span>Non</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Panneaux solaires</p></td>
+                                <td><p><span>Non</span></p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="divLocalisation">
+                    <hr>
+                    <h3>Localisation</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><p>Adresse</p></td>
+                                <td><p><span>Avenue Dailly 156, 1030 Schaerbeek</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Quartier</p></td>
+                                <td><p><span>Résidentiel calme</span></p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Proximité</p></td>
+                                <td><p><span>Écoles | Commerces | Transports publics</span></p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="divFinance">
+                    <hr>
+                    <h3>Finance</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><p>Loyer</p></td>
+                                <td><p><span>750</span>€/mois</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Prix</p></td>
+                                <td><p><span>577 000</span>€</p></td>
+                            </tr>
+                            <tr>
+                                <td><p>Charges</p></td>
+                                <td><p><span>110</span>€/mois</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="divRememberSlide">
+                <img src="images/maison.png" alt="">
+            </div>
+        </div>
+        <div class="divFormulaire">
+            <hr>
+            <h3>Contact</h3>
+            <form action="">
+                <div class="divNP">
+                    <div class="divNom">
+                        <label for="nom">Nom</label>
+                        <input type="text" class="input" required >
+                    </div>
+                    <div class="divPrenom">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" class="input" required >
+                    </div>
+                </div>
+                <div class="divEmail">
+                    <label for="email">Email</label>
+                    <input type="email" class="input" required >
+                </div>
+                <div class="divTelephone">
+                    <label for="tel">Téléphone (optionnel)</label>
+                    <input type="tel" class="input">
+                </div>
+                <div class="divMessage">
+                    <label for="message">Votre message</label>
+                    <textarea name="message" id="messageFormBien" required ></textarea>
+                </div>
+                <a class="btnAccent" href="">Envoyer</a>
+            </form>
+        </div>
+    </div>
+</section>
