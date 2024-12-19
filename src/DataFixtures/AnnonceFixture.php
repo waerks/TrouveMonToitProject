@@ -128,7 +128,7 @@ class AnnonceFixture extends Fixture implements DependentFixtureInterface
             $caracteristique->setSurfaceSalon($faker->randomNumber(2));
             $caracteristique->setSurfaceTerrain($faker->randomNumber(3));
 
-            for ($j = 0; $j < 3; $j++) {
+            for ($j = 0; $j < 2; $j++) {
                 $chambre = new Chambre();
                 $chambre->setSurface($faker->randomNumber(2));
                 $caracteristique->addChambre($chambre);

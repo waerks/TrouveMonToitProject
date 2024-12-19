@@ -16,13 +16,9 @@
                 </div>
                 <div class="div3Filtres">
                     <select id="type-bien" name="type-bien" class="select">
-                        <option value="appartement">Appartement</option>
-                        <option value="maison">Maison</option>
-                        <option value="studio">Studio</option>
-                        <option value="villa">Villa</option>
-                        <option value="loft">Loft</option>
-                        <option value="duplex">Duplex</option>
-                        <option value="triplex">Triplex</option>
+                    {% for typeAnnonce in typeAnnonces %}
+                        <option value="appartement">{{ typeAnnonce.typeAnnonce }}</option>
+                    {% endfor %}
                     </select>
                     <select id="prix-bien-location" name="prix-bien-appartement" class="select">
                         <option value="prix1">0€ - 500€</option>
@@ -47,227 +43,51 @@
         <div class="divPublicationsV">
             <h2>Dernières publications à vendre</h2>
             <div class="containerPublications">
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
+            {% for annonce in annonces %}
+                {% if annonce.categorie.typeAchat == 'vendre' %}
+                    <a href="detailbien.html" class="cardBienV cardBien">
+                        <span class="likeBienNotActive"><img src="{{ asset('build/images/icons/like.png') }}" alt="Like"></span>
+                        <div class="divImg">
+                                {% if annonce.photos|length > 0 %}
+                                    <img src="{{ annonce.photos|first.url }}" alt="Image de prévisualisation du bien">
+                                {% else %}
+                                    <img src="{{ asset('build/images/default-image.png') }}" alt="Image par défaut">
+                                {% endif %}
+                        </div>
+                        <div class="divContent">
+                            <p class="typeBien">{{ annonce.typeAnnonce.typeAnnonce }}</p>
+                            <h4 class="prixBien"><span class="prix">{{ annonce.prix }}</span>€</h4>
+                            <p class="infosBien"><span class="chbr">{{ annonce.caracteristiques.nombreChambres }}</span> ch. | <span class="surfaceH">{{ annonce.caracteristiques.surfaceHabitable }}</span> m²</p>
+                            <p class="adresseBien">{{ annonce.localisation.codePostal }} {{ annonce.localisation.ville }}</p>
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
             </div>
         </div>
         <div class="divPublicationsL">
             <h2>Dernières publications à louer</h2>
             <div class="containerPublications">
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
-                <a href="detailbien.html" class="cardBienV cardBien">
-                    <span class="likeBienNotActive">🩷</span>
-                    <div class="divImg">
-                        <img src="images/maison.png" alt="Image de prévisualisation du bien">
-                    </div>
-                    <div class="divContent">
-                        <p class="typeBien">Maison</p>
-                        <h4 class="prixBien"><span class="prix">577 000</span>€</h4>
-                        <p class="infosBien"><span class="chbr">3</span> ch. | <span class="surfaceH">350</span> m²</p>
-                        <p class="adresseBien">1030 Schaerbeek</p>
-                    </div>
-                </a>
+            {% for annonce in annonces %}
+                {% if annonce.categorie.typeAchat == 'louer' %}
+                    <a href="detailbien.html" class="cardBienV cardBien">
+                        <span class="likeBienNotActive"><img src="{{ asset('build/images/icons/like.png') }}" alt="Like"></span>
+                        <div class="divImg">
+                                {% if annonce.photos|length > 0 %}
+                                    <img src="{{ annonce.photos|first.url }}" alt="Image de prévisualisation du bien">
+                                {% else %}
+                                    <img src="{{ asset('build/images/default-image.png') }}" alt="Image par défaut">
+                                {% endif %}
+                        </div>
+                        <div class="divContent">
+                            <p class="typeBien">{{ annonce.typeAnnonce.typeAnnonce }}</p>
+                            <h4 class="prixBien"><span class="prix">{{ annonce.prix }}</span>€</h4>
+                            <p class="infosBien"><span class="chbr">{{ annonce.caracteristiques.nombreChambres }}</span> ch. | <span class="surfaceH">{{ annonce.caracteristiques.surfaceHabitable }}</span> m²</p>
+                            <p class="adresseBien">{{ annonce.localisation.codePostal }} {{ annonce.localisation.ville }}</p>
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
             </div>
         </div>
     </div>

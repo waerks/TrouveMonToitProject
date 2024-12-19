@@ -186,4 +186,9 @@ class Caracteristique
 
         return $this;
     }
+
+    public function getNombreChambres(): int
+    {
+        return $this->chambre->count();
+    }
 }
