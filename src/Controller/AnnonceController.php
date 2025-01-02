@@ -9,8 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AnnonceController extends AbstractController
 {
-    #[Route('/annonce/d/{type}', name: 'annonce_detail')]
-    public function AnnonceDetail(string $type): Response
+    #[Route('/annonce/d/{codeTMT}/{type}', name: 'annonce_detail')]
+    public function AnnonceDetail(string $type, int $codeTMT): Response
     {
         return $this->render('annonce/detail.html.twig', [
             'controller_name' => 'AnnonceController',

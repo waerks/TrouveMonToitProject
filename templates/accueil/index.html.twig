@@ -17,7 +17,7 @@
                 <div class="div3Filtres">
                     <select id="type-bien" name="type-bien" class="select">
                     {% for typeAnnonce in typeAnnonces %}
-                        <option value="appartement">{{ typeAnnonce.typeAnnonce }}</option>
+                        <option value="{{ typeAnnonce.typeAnnonce }}">{{ typeAnnonce.typeAnnonce }}</option>
                     {% endfor %}
                     </select>
                     <select id="prix-bien-location" name="prix-bien-appartement" class="select">
@@ -45,7 +45,7 @@
             <div class="containerPublications">
             {% for annonce in annonces %}
                 {% if annonce.categorie.typeAchat == 'vendre' %}
-                    <a href="detailbien.html" class="cardBienV cardBien">
+                    <a href="{{ path('annonce_detail', {'codeTMT' : annonce.code, 'type' : annonce.typeAnnonce.typeAnnonce}) }}" class="cardBienV cardBien">
                         <span class="likeBienNotActive"><img src="{{ asset('build/images/icons/like.png') }}" alt="Like"></span>
                         <div class="divImg">
                                 {% if annonce.photos|length > 0 %}
@@ -56,7 +56,7 @@
                         </div>
                         <div class="divContent">
                             <p class="typeBien">{{ annonce.typeAnnonce.typeAnnonce }}</p>
-                            <h4 class="prixBien"><span class="prix">{{ annonce.prix }}</span>€</h4>
+                            <h4 class="prixBien"><span class="prix">{{ annonce.prix|number_format(0, '', ' ') }}</span>€</h4>
                             <p class="infosBien"><span class="chbr">{{ annonce.caracteristiques.nombreChambres }}</span> ch. | <span class="surfaceH">{{ annonce.caracteristiques.surfaceHabitable }}</span> m²</p>
                             <p class="adresseBien">{{ annonce.localisation.codePostal }} {{ annonce.localisation.ville }}</p>
                         </div>

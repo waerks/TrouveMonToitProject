@@ -16,7 +16,8 @@ class RechercheController extends AbstractController
         ]);
     }
 
-    #[Route('/recherche/resultats/{nombreAnnonces}', name: 'recherche_resultats')]
+    // #[Route('/recherche/resultats/{nombreAnnonces}', name: 'recherche_resultats')]
+    #[Route('/recherche/resultats', name: 'recherche_resultats')]
     public function RechercheResultats(int $nombreAnnonces): Response
     {
         return $this->render('recherche/resultats.html.twig', [

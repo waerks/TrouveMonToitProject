@@ -104,6 +104,9 @@ class Annonce
     #[ORM\JoinColumn(nullable: false)]
     private ?TypeAnnonce $typeAnnonce = null;
 
+    #[ORM\Column(length: 10, unique: true)]
+    private ?string $code = null;
+
     public function __construct()
     {
         $this->photos = new ArrayCollection();
@@ -111,6 +114,7 @@ class Annonce
         $this->favoris = new ArrayCollection();
         $this->messages = new ArrayCollection();
         $this->equipements = new ArrayCollection();
+        $this->code = str_pad(random_int(0, 9999999999), 10, '0', STR_PAD_LEFT);
     }
 
     public function getId(): ?int
@@ -465,4 +469,18 @@ class Annonce
 
         return $this;
     }
+
+    public function getCode(): ?string
+    {
+        return $this->code;
+    }
+
+    public function setCode(?string $code): void
+    {
+        if ($code === null) {
+            $this->code = str_pad(random_int(0, 9999999999), 10, '0', STR_PAD_LEFT);
+        } else {
+            $this->code = $code;
+        }
+    }    
 }

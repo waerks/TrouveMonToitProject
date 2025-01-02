@@ -27,7 +27,7 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/annonce, roles: ROLE_USER }
+        # - { path: ^/annonce, roles: ROLE_USER }
         - { path: ^/espace-personnel, roles: ROLE_USER }
         - { path: ^/profil, roles: ROLE_USER }
         - { path: ^/messagerie, roles: ROLE_USER }

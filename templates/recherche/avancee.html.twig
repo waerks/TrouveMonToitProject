@@ -1,2 +1,104 @@
 {# Page de recherche avancéé #}
 {% include "base.html.twig" %}
+
+<section id="rechercheavancee">
+    <div class="container">
+        <div class="divRechercheRapide">
+            <h2>Recherche avancée</h2>
+            <input class="input" type="text" placeholder="Code TrouveMonToit">
+        </div>
+        <div class="divCustomRecherche">
+            <hr>
+            <h3>Type de transaction</h3>
+            <div class="divTypeTransaction">
+                <a class="btnChoixNotActive" href="">Acheter</a>
+                <a class="btnChoixActive" href="">Louer</a>
+            </div>
+        </div>
+        <div class="divCustomRecherche">
+            <hr>
+            <h3>Type de bien</h3>
+            <div class="divTypeBien">
+                <select id="type-bien" name="type-bien" class="select">
+                    <option value="appartement">Appartement</option>
+                    <option value="maison">Maison</option>
+                    <option value="studio">Studio</option>
+                    <option value="villa">Villa</option>
+                    <option value="loft">Loft</option>
+                    <option value="duplex">Duplex</option>
+                    <option value="triplex">Triplex</option>
+                </select>
+            </div>
+        </div>
+        <div class="divCustomRecherche">
+            <hr>
+            <h3>Localité</h3>
+            <div class="divLocalite">
+                <input class="input" type="text" placeholder="Entrez une ville ou un code postal">
+            </div>
+        </div>
+        <div class="divCustomRecherche">
+            <hr>
+            <h3>Budget</h3>
+            <h4>Prix</h4>
+            <div class="divPrix">
+                <label for="minimum">Minimum</label>
+                <input class="input" type="number" placeholder="0€">
+                <label for="maximum">Maximum</label>
+                <input class="input" type="number" placeholder="0€">
+            </div>
+        </div>
+        <div class="divCustomRecherche">
+            <hr>
+            <h3>Caractéristiques</h3>
+            <h4>Nombre de chambres</h4>
+            <div class="divNbreChambres">
+                <div class="nbre-input">
+                    <button class="decrement">-</button>
+                    <input type="number" id="number" value="0" min="0" max="100" step="1">
+                    <button class="increment">+</button>
+                </div>
+            </div>
+            <h4>Superficie</h4>
+            <div class="divSuperficie">
+                <label for="minimum">Minimum</label>
+                <input class="input" type="number" placeholder="0€">
+                <label for="maximum">Maximum</label>
+                <input class="input" type="number" placeholder="0€">
+            </div>
+            <h4>Année de construction</h4>
+            <div class="divAnneeConstruction">
+                <label for="minimum">Minimum</label>
+                <input class="input" type="number" placeholder="0€">
+                <label for="maximum">Maximum</label>
+                <input class="input" type="number" placeholder="0€">
+            </div>
+        </div>
+        <div class="divCustomRecherche">
+            <hr>
+            <h3>Options supplémentaires</h3>
+            <div class="divOptions">
+                <div class="divYNBtn">
+                    <input type="radio" id="garage" name="drone" value="garage" checked />
+                    <label for="garage">Avec Garage</label>
+                </div>
+                <div class="divYNBtn">
+                    <input type="radio" id="garage" name="drone" value="garage" checked />
+                    <label for="garage">Avec Garage</label>
+                </div>
+                <div class="divYNBtn">
+                    <input type="radio" id="garage" name="drone" value="garage" checked />
+                    <label for="garage">Avec Garage</label>
+                </div>
+                <div class="divYNBtn">
+                    <input type="radio" id="garage" name="drone" value="garage" checked />
+                    <label for="garage">Avec Garage</label>
+                </div>
+            </div>
+        </div>
+        <div class="divConfirmationRecherche">
+            <a class="btnAccent" href="{{ path('recherche_resultats')}}">Rechercher</a>
+            <a class="btnSecondary" href="">Réinitialiser</a>
+        </div>
+    </div>
+</section>
