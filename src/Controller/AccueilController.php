@@ -20,6 +20,7 @@ class AccueilController extends AbstractController
         $this->doctrine = $doctrine;
         $this->slugger = $slugger;
     }
+    
     #[Route('', name: 'accueil')]
     public function Accueil(): Response
     {

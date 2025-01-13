@@ -5,10 +5,10 @@
     <div class="container">
         <div class="divEntete">
             <div class="divInfos">
-                <h2><span>Maison</span> à <span>vendre</span></h2> 
-                <h4><span>3</span> chambres | <span>350</span>m²</h4>
-                <h4>Avenue Dailly 156 | 1030 Schaerbeek</h4>
-                <p>TrouveMonToit code : 6372829202</p>
+                <h2><span>{{ annonce.typeAnnonce.typeAnnonce }}</span> à <span>vendre</span></h2> 
+                <h4><span>{{ annonce.caracteristiques.nombreChambres }}</span> chambres | <span>{{ annonce.caracteristiques.surfaceHabitable }}</span>m²</h4>
+                <h4>{{ annonce.localisation.adresseComplete }} | {{ annonce.localisation.codePostal }} {{ annonce.localisation.ville }}</h4>
+                <p>TrouveMonToit code : {{ annonce.code }}</p>
             </div>
             <div class="divUserCommands">
                 <div class="divOne">
@@ -37,23 +37,23 @@
                 <div class="divMiniInfos">
                     <div class="divMiniApercu One">
                         <img src="images/maison.png" alt="">
-                        <p><span>3</span> chambres</p>
+                        <p><span>{{ annonce.caracteristiques.nombreChambres }}</span> chambres</p>
                     </div>
                     <div class="divMiniApercu Two">
                         <img src="images/maison.png" alt="">
-                        <p><span>2</span> salles de bains</p>
+                        <p><span>{{ annonce.caracteristiques.nombreSallesDeBain }}</span> salles de bains</p>
                     </div>
                     <div class="divMiniApercu Three">
                         <img src="images/maison.png" alt="">
-                        <p><span>350</span>m²</p>
+                        <p><span>{{ annonce.caracteristiques.surfaceHabitable|number_format(0, '', '') }}</span>m²</p>
                     </div>
                     <div class="divMiniApercu Four">
                         <img src="images/maison.png" alt="">
-                        <p><span>760</span>m²</p>
+                        <p><span>{{ annonce.caracteristiques.surfaceTerrain|number_format(0, '', '') }}</span>m²</p>
                     </div>
                 </div>
                 <div class="divPrixBien">
-                    <h2>577 000€</h2>
+                    <h2>{{ annonce.prix|number_format(0, '', ' ') }}€</h2>
                     <p>Disponibilité : <span>17/03/2025</span></p>
                 </div>
             </div>
@@ -63,8 +63,8 @@
             <div class="divContent">
                 <div class="divDescription">
                     <h3>Description</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, eveniet, odio magni non similique voluptates quibusdam labore dicta at omnis nulla ipsum fuga? Neque numquam nostrum debitis, non consectetur similique. Est voluptas omnis quisquam delectus voluptatem iure nisi consequuntur quod corporis pariatur veniam voluptatum odit temporibus consectetur nam nobis, nihil excepturi possimus, repellat esse atque minus, sit adipisci neque! Iusto!</p>
-                    <p id="date_publication">Publié le : <span>12/12/2024</span></p>
+                    <p>{{ annonce.description }}</p>
+                    <p id="date_publication">Publié le : <span>{{ annonce.datePublication|date('d/m/Y') }}</span></p>
                 </div>
                 <div class="divInfosGenerales">
                     <hr>
@@ -73,23 +73,23 @@
                         <tbody>
                             <tr>
                                 <td><p>Année de construction</p></td>
-                                <td><p><span>1934</span></p></td>
+                                <td><p><span>{{ annonce.caracteristiques.anneeConstruction }}</span></p></td>
                             </tr>
                             <tr>
                                 <td><p>État</p></td>
-                                <td><p><span>Rénové</span></p></td>
+                                <td><p><span>{{ annonce.etat }}</span></p></td>
                             </tr>
                             <tr>
                                 <td><p>Nombre d'étages</p></td>
-                                <td><p><span>4</span></p></td>
+                                <td><p><span>{{ annonce.nombreEtages }}</span></p></td>
                             </tr>
                             <tr>
                                 <td><p>Nombre de façades</p></td>
-                                <td><p><span>2</span></p></td>
+                                <td><p><span>{{ annonce.nombreFacades }}</span></p></td>
                             </tr>
                             <tr>
                                 <td><p>Parkings intérieurs</p></td>
-                                <td><p><span>1</span></p></td>
+                                <td><p><span>{{ annonce.parking }}</span></p></td>
                             </tr>
                         </tbody>
                     </table>
@@ -101,23 +101,17 @@
                         <tbody>
                             <tr>
                                 <td><p>Surface habitable</p></td>
-                                <td><p><span>350</span>m²</p></td>
+                                <td><p><span>{{ annonce.caracteristiques.surfaceHabitable|number_format(0, '', '') }}</span>m²</p></td>
                             </tr>
                             <tr>
                                 <td><p>Chambres et surfaces</p></td>
                             </tr>
-                            <tr>
-                                <td id="chambre1" class="chambre"><p>Chambre <span>1</span></p></td>
-                                <td><p><span>6</span>m²</p></td>
-                            </tr>
-                            <tr>
-                                <td id="chambre2" class="chambre"><p>Chambre <span>2</span></p></td>
-                                <td><p><span>13</span>m²</p></td>
-                            </tr>
-                            <tr>
-                                <td id="chambre3" class="chambre"><p>Chambre <span>3</span></p></td>
-                                <td><p><span>15</span>m²</p></td>
-                            </tr>
+                            {% for chambre in chambres %}
+                                <tr>
+                                    <td id="chambre1" class="chambre"><p>Chambre <span>{{ loop.index }}</span></p></td>
+                                    <td><p><span>{{ chambre.surface }}</span>m²</p></td>
+                                </tr>   
+                            {% endfor %}
                             <tr>
                                 <td><p>Salles de bains</p></td>
                                 <td><p><span>1</span></p></td>
